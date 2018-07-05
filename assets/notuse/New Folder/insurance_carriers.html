@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to Rajkot Insurance Institute</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script src="AC_RunActiveContent.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="pro_dropdown_2/pro_dropdown_2.css" />
+<script src="pro_dropdown_2/stuHover.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+      
+	  
+/***********************************************
+* Ultimate Fade-In Slideshow (v1.51): © Dynamic Drive (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+ 
+var fadeimages=new Array()
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages[0]=["header_img/header_0.jpg", "", ""] //plain image syntax
+fadeimages[1]=["header_img/header_1.jpg", "", ""] //image with link syntax
+fadeimages[2]=["header_img/header_2.jpg", "", ""] //image with link and target syntax
+fadeimages[3]=["header_img/header_02.jpg", "", ""] //image with link and target syntax
+fadeimages[4]=["header_img/header_3.jpg", "", ""] //image with link and target syntax
+fadeimages[5]=["header_img/header_03.jpg", "", ""] //image with link and target syntax
+fadeimages[6]=["header_img/header_4.jpg", "", ""] //image with link syntax
+fadeimages[7]=["header_img/header_04.jpg", "", ""] //image with link and target syntax
+fadeimages[8]=["header_img/header_5.jpg", "", ""] //image with link and target syntax
+fadeimages[9]=["header_img/header_05.jpg", "", ""] //image with link and target syntax
+var fadeimages2=new Array() //2nd array set example. Remove or add more sets as needed.
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages2[0]=["photo1.jpg", "", ""] //plain image syntax
+fadeimages2[1]=["photo2.jpg", "http://www.cssdrive.com", ""] //image with link syntax
+fadeimages2[2]=["photo3.jpg", "http://www.javascriptkit.com", "_new"] //image with link and target syntax
+ 
+var fadebgcolor="white"
+
+////NO need to edit beyond here/////////////
+ 
+var fadearray=new Array() //array to cache fadeshow instances
+var fadeclear=new Array() //array to cache corresponding clearinterval pointers
+ 
+var dom=(document.getElementById) //modern dom browsers
+var iebrowser=document.all
+ 
+function fadeshow(theimages, fadewidth, fadeheight, borderwidth, delay, pause, displayorder){
+this.pausecheck=pause
+this.mouseovercheck=0
+this.delay=delay
+this.degree=10 //initial opacity degree (10%)
+this.curimageindex=0
+this.nextimageindex=1
+fadearray[fadearray.length]=this
+this.slideshowid=fadearray.length-1
+this.canvasbase="canvas"+this.slideshowid
+this.curcanvas=this.canvasbase+"_0"
+if (typeof displayorder!="undefined")
+theimages.sort(function() {return 0.5 - Math.random();}) //thanks to Mike (aka Mwinter) :)
+this.theimages=theimages
+this.imageborder=parseInt(borderwidth)
+this.postimages=new Array() //preload images
+for (p=0;p<theimages.length;p++){
+this.postimages[p]=new Image()
+this.postimages[p].src=theimages[p][0]
+}
+ 
+var fadewidth=fadewidth+this.imageborder*2
+var fadeheight=fadeheight+this.imageborder*2
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers (ie: Firefox)
+document.write('<div id="master'+this.slideshowid+'" style="position:relative;width:'+fadewidth+'px;height:'+fadeheight+'px;overflow:hidden;"><div id="'+this.canvasbase+'_0" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div><div id="'+this.canvasbase+'_1" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div></div>')
+else
+document.write('<div><img name="defaultslide'+this.slideshowid+'" src="'+this.postimages[0].src+'"></div>')
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers such as Firefox
+this.startit()
+else{
+this.curimageindex++
+setInterval("fadearray["+this.slideshowid+"].rotateimage()", this.delay)
+}
+}
+
+function fadepic(obj){
+if (obj.degree<100){
+obj.degree+=10
+if (obj.tempobj.filters&&obj.tempobj.filters[0]){
+if (typeof obj.tempobj.filters[0].opacity=="number") //if IE6+
+obj.tempobj.filters[0].opacity=obj.degree
+else //else if IE5.5-
+obj.tempobj.style.filter="alpha(opacity="+obj.degree+")"
+}
+else if (obj.tempobj.style.MozOpacity)
+obj.tempobj.style.MozOpacity=obj.degree/101
+else if (obj.tempobj.style.KhtmlOpacity)
+obj.tempobj.style.KhtmlOpacity=obj.degree/100
+else if (obj.tempobj.style.opacity&&!obj.tempobj.filters)
+obj.tempobj.style.opacity=obj.degree/101
+}
+
+else{
+clearInterval(fadeclear[obj.slideshowid])
+obj.nextcanvas=(obj.curcanvas==obj.canvasbase+"_0")? obj.canvasbase+"_0" : obj.canvasbase+"_1"
+obj.tempobj=iebrowser? iebrowser[obj.nextcanvas] : document.getElementById(obj.nextcanvas)
+obj.populateslide(obj.tempobj, obj.nextimageindex)
+obj.nextimageindex=(obj.nextimageindex<obj.postimages.length-1)? obj.nextimageindex+1 : 0
+setTimeout("fadearray["+obj.slideshowid+"].rotateimage()", obj.delay)
+}
+}
+ 
+fadeshow.prototype.populateslide=function(picobj, picindex){
+var slideHTML=""
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML='<a href="'+this.theimages[picindex][1]+'" target="'+this.theimages[picindex][2]+'">'
+slideHTML+='<img src="'+this.postimages[picindex].src+'" border="'+this.imageborder+'px">'
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML+='</a>'
+picobj.innerHTML=slideHTML
+}
+ 
+ 
+fadeshow.prototype.rotateimage=function(){
+if (this.pausecheck==1) //if pause onMouseover enabled, cache object
+var cacheobj=this
+if (this.mouseovercheck==1)
+setTimeout(function(){cacheobj.rotateimage()}, 100)
+else if (iebrowser&&dom||dom){
+this.resetit()
+var crossobj=this.tempobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+crossobj.style.zIndex++
+fadeclear[this.slideshowid]=setInterval("fadepic(fadearray["+this.slideshowid+"])",50)
+this.curcanvas=(this.curcanvas==this.canvasbase+"_0")? this.canvasbase+"_1" : this.canvasbase+"_0"
+}
+else{
+var ns4imgobj=document.images['defaultslide'+this.slideshowid]
+ns4imgobj.src=this.postimages[this.curimageindex].src
+}
+this.curimageindex=(this.curimageindex<this.postimages.length-1)? this.curimageindex+1 : 0
+}
+ 
+fadeshow.prototype.resetit=function(){
+this.degree=10
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+if (crossobj.filters&&crossobj.filters[0]){
+if (typeof crossobj.filters[0].opacity=="number") //if IE6+
+crossobj.filters(0).opacity=this.degree
+else //else if IE5.5-
+crossobj.style.filter="alpha(opacity="+this.degree+")"
+}
+else if (crossobj.style.MozOpacity)
+crossobj.style.MozOpacity=this.degree/101
+else if (crossobj.style.KhtmlOpacity)
+crossobj.style.KhtmlOpacity=this.degree/100
+else if (crossobj.style.opacity&&!crossobj.filters)
+crossobj.style.opacity=this.degree/101
+}
+ 
+ 
+fadeshow.prototype.startit=function(){
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+this.populateslide(crossobj, this.curimageindex)
+if (this.pausecheck==1){ //IF SLIDESHOW SHOULD PAUSE ONMOUSEOVER
+var cacheobj=this
+var crossobjcontainer=iebrowser? iebrowser["master"+this.slideshowid] : document.getElementById("master"+this.slideshowid)
+crossobjcontainer.onmouseover=function(){cacheobj.mouseovercheck=1}
+crossobjcontainer.onmouseout=function(){cacheobj.mouseovercheck=0}
+}
+this.rotateimage()
+}
+
+function lightup(imageobject, opacity){
+ if (navigator.appName.indexOf("Netscape")!=-1
+  &&parseInt(navigator.appVersion)>=5)
+    imageobject.style.MozOpacity=opacity/100
+ else if (navigator.appName.indexOf("Microsoft")!= -1 
+  &&parseInt(navigator.appVersion)>=4)
+    imageobject.filters.alpha.opacity=opacity
+}
+
+</script>
+
+
+
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.leadsCycle_2{width: 180px;}
+.leadsCycle_2 h2{font:bold 12px tahoma;color:#33322D;}
+.leadsCycle_2 h2 a.more{float:right; font-family:Arial; font-size:11px; font-weight:normal;}
+ul.leadsCycleContainer_2 {width:180px;height:140px!important;height:130px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; list-style-type:none; overflow: hidden;border:none!important;}
+ul.leadsCycleContainer_2 li{padding:5px 0p 0p 0p;}
+ul.leadsCycleContainer_2 li.leadsCycleBg{ list-style-type:none;}
+.leadsCycleDate_2{float:right;font-family:Arial; font-size:11px; font-weight:normal; list-style-type:none;}
+.leadsCycleContainer_2 img {vertical-align:middle;margin:0px 0px;}
+ul.leadsCycleContainer_2 {font-size:13px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; list-style-type:none; }
+
+
+-->
+
+</style>
+
+</head>
+
+<body onload="MM_preloadImages('images/menu/home_h.jpg','images/menu/exmanition._hjpg.jpg','images/menu/insurance_carriers_h.jpg','images/menu/circulars_h.jpg','images/menu/awards_h.jpg','images/menu/journals_h.jpg','images/menu/our_team_h.jpg','images/menu/associate_insutitute_h.jpg')">
+<center>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top"><table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="13%" height="159" align="center" valign="middle"><p align="center"><img src="images/logo_1.jpg" alt="Logo" /></p></td>
+        <td width="87%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="44" align="right" valign="top"><table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="24" align="left" valign="top" class="top_menu_line"><img src="images/curve_left_top.jpg" width="24" height="42" /></td>
+                <td width="242" align="center" valign="middle" class="top_menu_line"><p align="center" class="arial_11"><a href="awards.html">Awards</a>  &nbsp; | &nbsp; <a href="photo_gallery.html">Photo Gallery</a>  &nbsp; | &nbsp; <a href="contactus.html">Contact Us</a></p></td>
+                <td width="24" align="right" valign="top" class="top_menu_line"><img src="images/curve_right_top.jpg" width="24" height="42" /></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="76" align="left" valign="top"><p align="left" style="padding-top:5px;" class="georgia_30"><strong>Rajkot Insurance Institute</strong></p></td>
+          </tr>
+          <tr>
+            <td height="39" align="left" valign="top"><table width="836" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="52" align="left" valign="top" >&nbsp;</td>
+                <td width="784" align="left" valign="top" ><div style="width:784px; height:39px; ">
+                <ul id="nav">
+                <li class="top">
+                <a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','images/menu/home_h.jpg',1)"><img src="images/menu/home_h.jpg" name="Image7" width="74" height="39" border="0" id="Image7" /></a></li>
+                <li class="top"></li>
+                <li class="top">
+                <a href="exmanition.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/menu/exmanition_h.jpg',1)"><img src="images/menu/exmanition.jpg" name="Image8" width="92" height="39" border="0" id="Image8" /></a>
+                  <ul class="sub">
+			<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/ASPX/DownloadForms/SURVEYOR%20TIME%20TABLE%20FOR%20OCTOBER%5B1%5D.pdf">Time Table</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand%20Book-2011/TABLE%20OF%20FEES.pdf" target="_blank">Fee Structure</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=160">Question Paper</a></li>
+
+             <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand Book-2011/List of Examination Centers, Employer &amp; Qualification code list.pdf" target="_blank">Exam Center</a></li>
+            <li><a href="#">Online Exams</a>
+            <ul class="fly">
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=237"target="_blank">Online Exams 1</a></li>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=255"target="_blank">Online Exams 2</a></li>
+            </ul></li>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDeta
+
+il.aspx?QID=219" target="_blank">e-Learning Program</a></li>
+           <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Results/ASPX/IIIResultSrch.aspx" target="_blank">Results</a></li>
+         </ul>
+        </li>                     
+        <li class="top"></li>
+             
+                <li class="top">
+               <a href="insurance_carriers.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','images/menu/hand_book_h.jpg',1)"><img src="images/menu/hand_book.jpg" name="Image9" width="92" height="39" border="0" id="Image9" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+                <a href="circulars.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','images/menu/circulars_h.jpg',1)"><img src="images/menu/circulars.jpg" name="Image10" width="84" height="39" border="0" id="Image10" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+                <a href="awards.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','images/menu/dowload_h.jpg',1)"><img src="images/menu/dowload.jpg" name="Image11" width="89" height="39" border="0" id="Image11" /></a>
+                <ul class="sub">
+			<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Fresh%20form%20for%20Licentiate,Associateship,Fellowship,Actuarial%20Science.pdf" target="_blank">Licentiate Fresh Form</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Repeaters%20form.pdf" target="_blank">Repeaters Form</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Request%20for%20Study%20Material.pdf" target="_blank">Study Material Form</a></li>
+
+             <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/27.%20Form%20for%20Revaluation%20%20Retotalling.pdf" target="_blank">Revaluation</a></li>
+            
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Request%20for%20Duplicate%20Mark-ListCertificateDiploma.pdf" target="_blank">Duplicate Mark list</a></li>
+           <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Application%20for%20Associateship%20Diploma.pdf" target="_blank">Assciate Diploma</a></li>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Application%20for%20Fellowship%20Diploma.pdf" target="_blank">Fellowship Diploma</a></li>
+         </ul>
+                
+                </li>
+                <li class="top"></li>
+               
+                <li class="top">
+                <a href="study_material.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/menu/journals_h.jpg',1)"><img src="images/menu/journals.jpg" name="Image12" width="108" height="39" border="0" id="Image12" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+                <a href="ourteam.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','images/menu/our_team_h.jpg',1)"><img src="images/menu/our_team.jpg" name="Image13" width="90" height="39" border="0" id="Image13" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+               <a href="associate_insutitute.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','images/menu/associate_insutitute_h.jpg',1)"><img src="images/menu/associate_insutitute.jpg" name="Image14" width="144" height="39" border="0" id="Image14" /></a>
+               <ul class="sub_1">
+			<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/AssociateInstitutes/Upload/Associated%20Institutes.pdf" target="_blank">List of Associate Institute</a></li>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ReferenceLinks/HTML/links.html" target="_blank">Related Link</a></li>
+           
+           <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Results/ASPX/IIIResultSrch.aspx" target="_blank">Result for Licentiate </a></li>
+         </ul>
+                </li>
+                </ul>
+                </div></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="padding-top:1px;"><table width="972" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="16" align="left" valign="top"><img src="images/heade_left_curve_1.jpg" width="16" height="213" /></td>
+        <td width="940" align="center" valign="top"><script type="text/javascript">
+//new fadeshow(IMAGES_ARRAY_NAME, slideshow_width, slideshow_height, borderwidth, delay, pause (0=no, 1=yes), optionalRandomOrder)
+new fadeshow(fadeimages, 940, 213, 0, 1400, 0)</script></td>
+        <td width="16" align="right" valign="top"><img src="images/heade_right_curve_1.jpg" width="16" height="213" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="center" valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><table width="972" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top"><table width="944" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="18" align="left" valign="top"><img src="images/left_gradion_1.jpg" width="18" height="176" /></td>
+            <td  align="center" valign="top" class="main_contant_line_1"><table width="904" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="904" align="center" valign="top" class="main_contant_line"><table width="880" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td height="20" align="center" valign="top">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td height="46" align="left" valign="middle"><p align="left" class="welcome_24"><strong>Insurance Carriers</strong></p></td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" ><p>&nbsp;</p>
+<p align="justify" class="right_box_heading"><strong></strong></p> 
+</td>
+                      </tr>
+                      
+                      <tr>
+                        <td align="left" valign="top">
+                        <p align="justify" class="welcome_contant" style="padding:0px 12px 0px 12px ;">INDIAN INSURANCE SOCIETY – MEMOIR WITH INFORMATION
+
+ The birth history of our Society is like a mythological story. In mythological story some where it is found that the son is older than the father. <br />
+ Similarly our Society was born well in advance before the birth of our parent organization Insurance Institute of India took place that took place on 30th June, 1955.
+
+Insurance education movement was started from East India, from Kolkata. <br />
+The reason may be previously Calcutta was the capital of India and the cultural atmosphere of Calcutta was the best due to British infiltration. People of here became curious for more and more knowledge. <br />
+This soil produced many insurance stalwarts and maximum number of Insurance Companies was established.
+
+As a result the need for education was felt. For catering the need of Insurance Education in the last century first two insurance educational institutes were established in Kolkata within a span of 14/15 years.
+
+<br />
+Our Society, Indian Insurance Society, 2nd senior most affiliated institute was established on 15th August, 1944 with a view to educate the employees of Insurance Companies. Syllabus and curriculum were formed on the job-oriented basis. That time private insurers were sponsoring this education as a part of in-house training to update their employees of very much complicated insurance rules and policies. Later on, Life Insurance was nationalized in 1956 and General Insurance was nationalized in 1973. The scenario was changed. Insurance Industries became the main source of supplying fund in the Central Budget of the country. Its important was realized and increased by leaps and bounds. Pattern of syllabus in Insurance subjects were changed and number of subjects were increased. <br />
+Then the insurance education was mainly concentrated among the employees of PSU Insurance Companies. Employees were encouraging for insurance education by paying extra allowance and by giving promotion etc. But the entire scenario was changed after opening up the Insurance Sector to private players in 1999. Now this course has been revised, new subjects have been introduced as per need of the day. The importance of our course has got the tremendous importance for achieving many more avenues to build the career. <br />
+The Certificate and Diploma awarded by our parent organization Insurance Institute of India (formerly known as Federation of Insurance Institutes) are recognized by all insurers, State Government and Central Government as also by Afro Asian Countries, UK, USA, Canada, New Zealand and Australian Insurance Institutes. <br />
+We conduct Licentiate, Associateship, Fellowship examination covering nearly 45 subjects. <br />
+The examinations are conducted at more than 100 centers in India and 18 centers at abroad. We are also engaged in holding Risk Inspection Programmes, Seminars, Workshops, Oral Tuition Classes, Publishing Journals, Reasearch activities in Insurance. <br />
+We have Library facilities with Air Conditioned Class Room and excellent faculty members. Various recreational programmes, viz. Annual Picnic, Annual Picnic, Annual Social etc. are also arranged by us.
+
+Any person having minimum qualification Madhyamik/SSC may join this course having the aspiration of building career in Insurance profession is welcome. For further queries, guidelines contact at our Office at Royal Insurance Building (Heritage Building), Ground Floor – opposite to Kolkata GPO. So don’t delay, leap for the insurance education and after you look the bright future waiting for you.
+
+Thank You</p>
+                        
+                       
+                          <br />
+
+                        <p>&nbsp;</p>
+                                              </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top" >&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td height="100" align="center" valign="top" >&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top" >&nbsp;</td>
+                      </tr>
+                      
+                    </table></td>
+                  </tr>
+                </table></td>
+            <td width="22" align="right" valign="top"><img src="images/right_gradion_1.jpg" width="22" height="176" /></td>
+          </tr>
+        </table></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>
+  
+</table></td>
+  </tr>
+  <tr>
+    <td height="150" align="center" valign="middle" class="footer_line">
+    <p>&nbsp;</p>
+    <p class="arial_11" align="center"><a href="index.html">Home</a>&nbsp; | &nbsp;<a href="exmanition.html">Exmanition</a>&nbsp; | &nbsp;<a href="handbook.html">Hand Book</a>&nbsp; | &nbsp;<a href="circulars.html">Circulars</a>&nbsp; | &nbsp;<a href="http://www.tvmins.com/INSTI_files/timetablemay2011.pdf" target="_blank">Time Table</a>&nbsp; | &nbsp;<a href="study_material.html">Study Materia</a>&nbsp; | &nbsp;<a href="ourteam.html">Our Team</a>&nbsp; | &nbsp;<a href="associate_insutitute.html">Associate Insutitute</a>&nbsp; | &nbsp; <a href="awards.html">Awards</a>  &nbsp;| &nbsp; <a href="photo_gallery.html">Photo Gallery</a> &nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p align="center"  class="arial_12b" >Copyright © 2011 Rajkot Insurance Institute.  All Rights Reserved.</p>
+    </td>
+  </tr>
+</table>
+
+
+</center>
+</body>
+</html>

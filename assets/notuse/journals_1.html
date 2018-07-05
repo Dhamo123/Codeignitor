@@ -1,0 +1,1700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to Rajkot Insurance Institute</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="AC_RunActiveContent.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="pro_dropdown_2/pro_dropdown_2.css" />
+<script src="pro_dropdown_2/stuHover.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      
+	  
+/***********************************************
+* Ultimate Fade-In Slideshow (v1.51): © Dynamic Drive (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+ 
+var fadeimages=new Array()
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages[0]=["header_img/header_0.jpg", "", ""] //plain image syntax
+fadeimages[1]=["header_img/header_1.jpg", "", ""] //image with link syntax
+fadeimages[2]=["header_img/header_2.jpg", "", ""] //image with link and target syntax
+fadeimages[3]=["header_img/header_2.jpg", "", ""] //image with link and target syntax
+fadeimages[4]=["header_img/header_3.jpg", "", ""] //image with link and target syntax
+fadeimages[5]=["header_img/header_3.jpg", "", ""] //image with link and target syntax
+fadeimages[6]=["header_img/header_4.jpg", "", ""] //image with link syntax
+fadeimages[7]=["header_img/header_4.jpg", "", ""] //image with link and target syntax
+fadeimages[8]=["header_img/header_5.jpg", "", ""] //image with link and target syntax
+fadeimages[9]=["header_img/header_5.jpg", "", ""] //image with link and target syntax
+fadeimages[10]=["header_img/header_0.jpg", "", ""] //image with link and target syntax
+var fadeimages2=new Array() //2nd array set example. Remove or add more sets as needed.
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages2[0]=["photo1.jpg", "", ""] //plain image syntax
+fadeimages2[1]=["photo2.jpg", "http://www.cssdrive.com", ""] //image with link syntax
+fadeimages2[2]=["photo3.jpg", "http://www.javascriptkit.com", "_new"] //image with link and target syntax
+ 
+var fadebgcolor="white"
+
+////NO need to edit beyond here/////////////
+ 
+var fadearray=new Array() //array to cache fadeshow instances
+var fadeclear=new Array() //array to cache corresponding clearinterval pointers
+ 
+var dom=(document.getElementById) //modern dom browsers
+var iebrowser=document.all
+ 
+function fadeshow(theimages, fadewidth, fadeheight, borderwidth, delay, pause, displayorder){
+this.pausecheck=pause
+this.mouseovercheck=0
+this.delay=delay
+this.degree=10 //initial opacity degree (10%)
+this.curimageindex=0
+this.nextimageindex=1
+fadearray[fadearray.length]=this
+this.slideshowid=fadearray.length-1
+this.canvasbase="canvas"+this.slideshowid
+this.curcanvas=this.canvasbase+"_0"
+if (typeof displayorder!="undefined")
+theimages.sort(function() {return 0.5 - Math.random();}) //thanks to Mike (aka Mwinter) :)
+this.theimages=theimages
+this.imageborder=parseInt(borderwidth)
+this.postimages=new Array() //preload images
+for (p=0;p<theimages.length;p++){
+this.postimages[p]=new Image()
+this.postimages[p].src=theimages[p][0]
+}
+ 
+var fadewidth=fadewidth+this.imageborder*2
+var fadeheight=fadeheight+this.imageborder*2
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers (ie: Firefox)
+document.write('<p id="master'+this.slideshowid+'" style="position:relative;width:'+fadewidth+'px;height:'+fadeheight+'px;overflow:hidden;"><p id="'+this.canvasbase+'_0" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></p><p id="'+this.canvasbase+'_1" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></p></p>')
+else
+document.write('<p align="center" class="Arial_12"><img name="defaultslide'+this.slideshowid+'" src="'+this.postimages[0].src+'"></p>')
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers such as Firefox
+this.startit()
+else{
+this.curimageindex++
+setInterval("fadearray["+this.slideshowid+"].rotateimage()", this.delay)
+}
+}
+
+function fadepic(obj){
+if (obj.degree<100){
+obj.degree+=10
+if (obj.tempobj.filters&&obj.tempobj.filters[0]){
+if (typeof obj.tempobj.filters[0].opacity=="number") //if IE6+
+obj.tempobj.filters[0].opacity=obj.degree
+else //else if IE5.5-
+obj.tempobj.style.filter="alpha(opacity="+obj.degree+")"
+}
+else if (obj.tempobj.style.MozOpacity)
+obj.tempobj.style.MozOpacity=obj.degree/101
+else if (obj.tempobj.style.KhtmlOpacity)
+obj.tempobj.style.KhtmlOpacity=obj.degree/100
+else if (obj.tempobj.style.opacity&&!obj.tempobj.filters)
+obj.tempobj.style.opacity=obj.degree/101
+}
+
+else{
+clearInterval(fadeclear[obj.slideshowid])
+obj.nextcanvas=(obj.curcanvas==obj.canvasbase+"_0")? obj.canvasbase+"_0" : obj.canvasbase+"_1"
+obj.tempobj=iebrowser? iebrowser[obj.nextcanvas] : document.getElementById(obj.nextcanvas)
+obj.populateslide(obj.tempobj, obj.nextimageindex)
+obj.nextimageindex=(obj.nextimageindex<obj.postimages.length-1)? obj.nextimageindex+1 : 0
+setTimeout("fadearray["+obj.slideshowid+"].rotateimage()", obj.delay)
+}
+}
+ 
+fadeshow.prototype.populateslide=function(picobj, picindex){
+var slideHTML=""
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML='<a href="'+this.theimages[picindex][1]+'" target="'+this.theimages[picindex][2]+'">'
+slideHTML+='<img src="'+this.postimages[picindex].src+'" border="'+this.imageborder+'px">'
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML+='</a>'
+picobj.innerHTML=slideHTML
+}
+ 
+ 
+fadeshow.prototype.rotateimage=function(){
+if (this.pausecheck==1) //if pause onMouseover enabled, cache object
+var cacheobj=this
+if (this.mouseovercheck==1)
+setTimeout(function(){cacheobj.rotateimage()}, 100)
+else if (iebrowser&&dom||dom){
+this.resetit()
+var crossobj=this.tempobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+crossobj.style.zIndex++
+fadeclear[this.slideshowid]=setInterval("fadepic(fadearray["+this.slideshowid+"])",50)
+this.curcanvas=(this.curcanvas==this.canvasbase+"_0")? this.canvasbase+"_1" : this.canvasbase+"_0"
+}
+else{
+var ns4imgobj=document.images['defaultslide'+this.slideshowid]
+ns4imgobj.src=this.postimages[this.curimageindex].src
+}
+this.curimageindex=(this.curimageindex<this.postimages.length-1)? this.curimageindex+1 : 0
+}
+ 
+fadeshow.prototype.resetit=function(){
+this.degree=10
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+if (crossobj.filters&&crossobj.filters[0]){
+if (typeof crossobj.filters[0].opacity=="number") //if IE6+
+crossobj.filters(0).opacity=this.degree
+else //else if IE5.5-
+crossobj.style.filter="alpha(opacity="+this.degree+")"
+}
+else if (crossobj.style.MozOpacity)
+crossobj.style.MozOpacity=this.degree/101
+else if (crossobj.style.KhtmlOpacity)
+crossobj.style.KhtmlOpacity=this.degree/100
+else if (crossobj.style.opacity&&!crossobj.filters)
+crossobj.style.opacity=this.degree/101
+}
+ 
+ 
+fadeshow.prototype.startit=function(){
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+this.populateslide(crossobj, this.curimageindex)
+if (this.pausecheck==1){ //IF SLIDESHOW SHOULD PAUSE ONMOUSEOVER
+var cacheobj=this
+var crossobjcontainer=iebrowser? iebrowser["master"+this.slideshowid] : document.getElementById("master"+this.slideshowid)
+crossobjcontainer.onmouseover=function(){cacheobj.mouseovercheck=1}
+crossobjcontainer.onmouseout=function(){cacheobj.mouseovercheck=0}
+}
+this.rotateimage()
+}
+
+function lightup(imageobject, opacity){
+ if (navigator.appName.indexOf("Netscape")!=-1
+  &&parseInt(navigator.appVersion)>=5)
+    imageobject.style.MozOpacity=opacity/100
+ else if (navigator.appName.indexOf("Microsoft")!= -1 
+  &&parseInt(navigator.appVersion)>=4)
+    imageobject.filters.alpha.opacity=opacity
+}
+
+
+</script>
+<style type="text/css">
+<!--
+.style1 {font-weight: bold}
+-->
+</style>
+
+
+
+
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.leadsCycle_2{width: 180px;}
+.leadsCycle_2 h2{font:bold 12px tahoma;color:#33322D;}
+.leadsCycle_2 h2 a.more{float:right; font-family:Arial; font-size:11px; font-weight:normal;}
+ul.leadsCycleContainer_2 {width:180px;height:140px!important;height:130px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; list-style-type:none; overflow: hidden;border:none!important;}
+ul.leadsCycleContainer_2 li{padding:5px 0p 0p 0p;}
+ul.leadsCycleContainer_2 li.leadsCycleBg{ list-style-type:none;}
+.leadsCycleDate_2{float:right;font-family:Arial; font-size:11px; font-weight:normal; list-style-type:none;}
+.leadsCycleContainer_2 img {vertical-align:middle;margin:0px 0px;}
+ul.leadsCycleContainer_2 {font-size:13px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; list-style-type:none; }
+
+
+-->
+
+</style>
+
+
+
+
+</head>
+
+<body onload="MM_preloadImages('images/menu/home_h.jpg','images/menu/exmanition._hjpg.jpg','images/menu/insurance_carriers_h.jpg','images/menu/circulars_h.jpg','images/menu/awards_h.jpg','images/menu/journals_h.jpg','images/menu/our_team_h.jpg','images/menu/associate_insutitute_h.jpg')">
+<center>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top"><table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="13%" height="159" align="center" valign="middle"><p align="center"><img src="images/logo_1.jpg" alt="Logo" /></p></td>
+        <td width="87%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="44" align="right" valign="top"><table width="320" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="24" align="left" valign="top" class="top_menu_line"><img src="images/curve_left_top.jpg" width="24" height="42" /></td>
+                <td width="270" align="center" valign="middle" class="top_menu_line"><p align="center" class="arial_11"><a href="reports.html">Reports</a>  &nbsp; | &nbsp; <a href="photo_gallery.html">Photo Gallery</a>  &nbsp; | &nbsp; <a href="contactus.html">Contact Us </a>  &nbsp; | &nbsp; <a href="sitemap.html">Sitemap</a></p></td>
+                <td width="24" align="right" valign="top" class="top_menu_line"><img src="images/curve_right_top.jpg" width="24" height="42" /></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="76" align="left" valign="top"><p align="left" style="padding-top:5px;" class="georgia_30"><strong>Rajkot Insurance Institute</strong></p></td>
+          </tr>
+          <tr>
+            <td height="39" align="left" valign="top"><table width="836" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="16" align="left" valign="top" >&nbsp;</td>
+                <td width="810" align="left" valign="top" ><p style="width:818px; height:39px; ">
+                <ul id="nav">
+                <li class="top">
+                <a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','images/menu/home_h.jpg',1)"><img src="images/menu/home.jpg" name="Image7" width="74" height="39" border="0" id="Image7" /></a></li>
+                <li class="top"></li>
+                <li class="top">
+                <a href="exmanition.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/menu/exmanition_h.jpg',1)"><img src="images/menu/exmanition_h.jpg" name="Image8" width="92" height="39" border="0" id="Image8" /></a>
+                  <ul class="sub">
+			<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/ASPX/DownloadForms/SURVEYOR%20TIME%20TABLE%20FOR%20OCTOBER%5B1%5D.pdf">Time Table</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand%20Book-2011/TABLE%20OF%20FEES.pdf" target="_blank">Fee Structure</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=160">Question Paper</a></li>
+
+             <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand Book-2011/List of Examination Centers, Employer &amp; Qualification code list.pdf" target="_blank">Exam Center</a></li>
+            <li><a href="#">Online Exams</a>
+            <ul class="fly">
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDeta
+
+il.aspx?QID=237
+" target="_blank">Online Exams 1</a>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDeta
+
+il.aspx?QID=238" target="_blank">Online Exams 2</a>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDeta
+
+il.aspx?QID=219" target="_blank">Online Exams 3</a>
+            </ul>
+            </li>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDeta
+
+il.aspx?QID=219">Manual Exams</a></li>
+           <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Results/ASPX/IIIResultSrch.aspx" target="_blank">Result for Licentiate </a></li>
+         </ul>
+        </li>               
+        <li class="top"></li>
+             
+                <li class="top">
+               <a href="insurance_carriers.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','images/menu/insurance_carriers_h.jpg',1)"><img src="images/menu/insurance_carriers.jpg" name="Image9" width="140" height="39" border="0" id="Image9" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+                <a href="circulars.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','images/menu/circulars_h.jpg',1)"><img src="images/menu/circulars.jpg" name="Image10" width="91" height="39" border="0" id="Image10" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+                <a href="awards.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','images/menu/awards_h.jpg',1)"><img src="images/menu/awards.jpg" name="Image11" width="80" height="39" border="0" id="Image11" /></a></li>
+                <li class="top"></li>
+               
+                <li class="top">
+                <a href="study_material.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/menu/journals_h.jpg',1)"><img src="images/menu/journals.jpg" name="Image12" width="98" height="39" border="0" id="Image12" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+                <a href="ourteam.html" onmouseover="MM_swapImage('Image13','','images/menu/our_team_h.jpg',1)" onmouseout="MM_swapImgRestore()"><img src="images/menu/our_team.jpg" name="Image13" width="90" height="39" border="0" id="Image13" /></a></li>
+                <li class="top"></li>
+                
+                <li class="top">
+               <a href="associate_insutitute.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','images/menu/associate_insutitute_h.jpg',1)"><img src="images/menu/associate_insutitute.jpg" name="Image14" width="145" height="39" border="0" id="Image14" /></a>
+               <ul class="sub_1">
+			<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/AssociateInstitutes/Upload/Associated%20Institutes.pdf" target="_blank">List of Associate Institute</a></li>
+            <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ReferenceLinks/HTML/links.html" target="_blank">Related Link</a></li>
+           
+           <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Results/ASPX/IIIResultSrch.aspx" target="_blank">Result for Licentiate </a></li>
+         </ul>
+                </li>
+                </ul>
+                </p></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="padding-top:1px;"><table width="972" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="16" align="left" valign="top"><img src="images/heade_left_curve_1.jpg" width="16" height="213" /></td>
+        <td width="940" align="center" valign="top"><script type="text/javascript">
+//new fadeshow(IMAGES_ARRAY_NAME, slideshow_width, slideshow_height, borderwidth, delay, pause (0=no, 1=yes), optionalRandomOrder)
+new fadeshow(fadeimages, 940, 213, 0, 1400, 0)</script></td>
+        <td width="16" align="right" valign="top"><img src="images/heade_right_curve_1.jpg" width="16" height="213" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="center" valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><table width="972" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="708" align="left" valign="top"><table width="680" border="0" align="left" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="18" align="left" valign="top"><img src="images/left_gradion_1.jpg" width="18" height="176" /></td>
+            <td width="650" align="center" valign="top" class="main_contant_line_1"><table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="400" align="left" valign="top" class="main_contant_line"><table width="614" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td height="20" align="center" valign="top">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td height="46" align="left" valign="middle"><p align="left" class="welcome_24"><strong>sTUDY mATERIAL</strong></p></td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                        <p>&nbsp;</p><br />
+<br />
+<p align="justify" class="welcome_contant">&nbsp;</p></td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top"><table  width="614" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="278" height="60" colspan="3" align="center" valign="middle" bgcolor="#76C5F0" class="boder_ltb" >
+<p align="center" class="Arial_13g"><strong>Licentiate, Associateship, Fellowship, <br />
+                                  CIS,Surveyor, Actuarial Science
+                                </strong></p></td>
+<td width="320" height="60" colspan="4" align="center" valign="middle" bgcolor="#A9E2FF" class="boder_trbl">
+<p align="center" class="Arial_13"><strong>Rate Per Copy</strong></p></td>
+</tr>
+<tr>
+<td width="56" height="100" align="center" valign="middle" bgcolor="#c0ffff" class="boder_lb" >
+<p align="center" class="Arial_13"><strong>Sub No.</strong></p></td>
+<td height="100" align="center" valign="middle" bgcolor="#c0ffff" class="boder_lb">
+
+  <p align="center" class="Arial_13"><strong>Title of Books</strong></p></td>
+<td width="70" height="100" align="center" valign="middle" bgcolor="#c0ffff"  class="boder_lb" >
+
+  <p align="center" class="Arial_13"><strong>Type</strong></p></td>
+<td height="100" align="center" valign="middle" bgcolor="#c0ffff"  class="boder_lb">
+<p align="center" class="Arial_13"><strong>For<br /> 
+  Indian Candidates <br />
+(Rs.)</strong></p></td>
+<td height="100" align="center" valign="middle" bgcolor="#c0ffff"  class="boder_lb">
+<p align="center" class="Arial_13">
+<strong>For SriLankan Candidates<br />
+(Rs.)</strong></p></td>
+<td height="100" align="center" valign="middle" bgcolor="#c0ffff"  class="boder_lb">
+<p align="center" class="Arial_13"><strong>For Overseas 
+Candidates 
+(Rs.)</strong></p></td>
+<td height="100" align="center" valign="middle" bgcolor="#c0ffff" class="boder_lrb" >
+<p align="center" class="Arial_13"><strong>Year of Edition</strong></p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 106</p></td>
+<td align="center" valign="middle" class="boder_lb">
+<p align="center" class="Arial_12">Examination Handbook</p></td>
+<td width="70" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 38px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td valign="middle" align="center">
+<p align="center" class="Arial_12">50</p></td>
+<td valign="middle" align="center">
+<p align="center" class="Arial_12">350</p></td>
+<td valign="middle" align="center">
+<p align="center" class="Arial_12">500</p></td>
+<td valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial"> </p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 106</p></td>
+<td valign="middle" align="center">
+<p align="center" class="Arial_12">Study Techniques</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 38px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 80px; height: 38px;" valign="middle" align="center">
+<p align="center" class="Arial_12">5</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 80px; height: 38px;" valign="middle" align="center">
+<p align="center" class="Arial_12">55</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 80px; height: 38px;" valign="middle" align="center">
+<p align="center" class="Arial_12">350</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4; 
+border-bottom-style: solid; border-bottom-color: #d4d4d4; height: 38px;" valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial"> </p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; height: 18px; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4; " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Licentiate</b>4<font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 01</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Principles of Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td valign="middle" align="center">
+<p align="center" class="Arial_12">2010</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 02</p></td>
+<td  valign="middle" align="center">
+<p align="center" class="Arial_12">Practice of Life </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Assurance (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2010</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 11</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Practice of General </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Insurance (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2010</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 14</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Regulation of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Insurance Business</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2010</p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; height: 18px; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4; " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Associateship (Life)</b> </p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 21</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Information </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Technology (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 22</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life Assurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Underwriting (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 23</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Application of Life </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Assurance (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 24</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 72px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Legal Aspects of Life </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Assurance (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 72px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 80px; height: 72px;" valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 80px; height: 72px;" valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 80px; height: 72px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p style="top: 0px; height: 14px;"><font style="font-size: 12px; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4; " color="#000000" face="Verdana">2000</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 25</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life Assurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Management (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td valign="middle" align="center" class="boder_lb">
+<p align="center" class="Arial_12">IC 26</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life Assurance Finance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>(Non-Life) (Fire)</b>4<font style="font-size: 12px;" color="#000000" face="Verdana"> </p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 21</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Information </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Technology (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 56px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">IC 51</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Hazards of Specific </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Industries (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 52</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">General Fire Hazards </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 56px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">IC 54</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Fire Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Underwriting (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 56px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">IC 55</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Consequential Loss </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(Fire) Insurance (H&amp;E)</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 70px; height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 58px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 56</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Fire Insurance Claims </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Associateship (Marine)</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 21</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Information </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Technology (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 61</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Cargo Loss Prevention </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 62</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Commercial Geography </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 63</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Marine Clauses (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  width: 56px; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">IC 65</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Marine Underwriting </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 66</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Marine Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Claims (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Associateship (Miscellaneous)</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 21</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Information </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Technology (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 71</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Agricultural Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 72</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Motor Insurance (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2003</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 73</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Personal Accident, </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Sickness &amp; Misc. Insu. </p>
+<p style="top: 28px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 74</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Liability Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 77</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Engineering Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Associateship (General)</b>4<font style="font-size: 12px;" color="#000000" face="Verdana"> </p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 21</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Information </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Technology (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 57</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Fire &amp; Consequential </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Loss Insurance (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 67</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Marine Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 72</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Motor Insurance (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2003</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 78</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Misclleneous Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 79</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Liability &amp; Engineering </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Insurance (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">100</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">175</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1250</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Fellowship (Life)</b>4<font style="font-size: 12px;" color="#000000" face="Verdana"> </p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 81</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Mathematical Basis of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Life Assurance</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1991</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 82</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Statistics</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1989</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 83</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Group Insurance &amp; </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Retirement Benefit </p>
+<p style="top: 28px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Schemes</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1986</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 85</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Reinsurance</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2002</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 86</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Risk Management</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1986</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 87</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Law &amp; Economics of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Insurance</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1988</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Fellowship (Common)</b>4<font style="font-size: 12px;" color="#000000" face="Verdana"> </p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 88</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Marketing &amp; Public </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Relations </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 80</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Human Resource </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Management </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2000</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Fellowship (Any One of the following - Optional Subject for Life &amp; General)</b>4<font style="font-size: 12px;" color="#000000" face="Verdana"> </p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 89</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Management </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Accounting </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2001</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 97</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Legal Aspects of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Industrial Relations</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1986</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 98</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Advanced Information </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Technology</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2005</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 99</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Asset Management</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">125</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">200</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2005</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>IRDA (Pre-recruitment Test for Agents)</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 33</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life Insurance (All </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Regional Languages)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2007</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 34</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">General Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2007</p></td>
+</tr>
+<tr>
+<td style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial"> </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Model Question Papers </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">20</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2008</p></td>
+</tr>
+<tr>
+<td style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial"> </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Model Question Papers </p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">20</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2008</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>PLI (Training course for Agents)</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">PLI-01</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Postal Life Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">(H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">50</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">0</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2008</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>C.I.S. - Certificate in Insurance Salesmanship</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 30</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Practice of Life </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Assurance (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2003</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 31</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Insurance </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Salesmanship (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Common</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">1999</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 32</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Practice of General </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Insurance (H&amp;E)</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2004</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Suveryors</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">S01</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Principles &amp; Practice of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Insurance &amp; Survey &amp; </p>
+<p style="top: 28px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Loss Assessment</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">425</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2500</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2003</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Acturial Science</b>4<font style="font-size: 12px;" color="#000000" face="Verdana"> </p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC A1</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Foundations of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Casualty Acturial </p>
+<p style="top: 28px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Science - Part1</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2007</p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC A2</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Foundations of </p>
+<p style="top: 14px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Casualty Acturial </p>
+<p style="top: 28px; height: 14px;"><font style="font-size: 12px;" color="#000000" face="Verdana">Science - Part2</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">75</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">150</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">1100</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">2007</p></td>
+</tr>
+<tr>
+<td colspan="7" style=" " valign="top" align="left">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </p></td>
+</tr>
+<tr>
+<td colspan="7" style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center" bgcolor="#a9e2ff">
+<p style="top: 0px; height: 16px;"><font style="font-size: 13px;" color="#000000" face="Arial">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 4<font style="font-size: 12px;" color="#0223c7" face="Verdana"><b>Brokers</b></p></td>
+</tr>
+<tr>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">IC 101</p></td>
+<td style="border-left-width: 1px; border-left-style: solid;border-left-color: #d4d4d4; border-top-width: 1px; border-top-style: solid; border-top-color: #d4d4d4; border-bottom-width: 1px;
+border-bottom-style: solid; border-bottom-color: #d4d4d4; width: 152px; border-right-width: 1px; border-right-style: solid; border-right-color: #d4d4d4;  height: 48px;" valign="middle" align="center">
+<p align="center" class="Arial_12">Insurance Broking</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">Non-Life</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">350</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">425</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2500</p></td>
+<td style=" " valign="middle" align="center">
+<p align="center" class="Arial_12">2004</p></td>
+</tr>
+</tbody></table></td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">&nbsp;</td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+            <td width="22" align="right" valign="top"><img src="images/right_gradion_1.jpg" width="22" height="176" /></td>
+          </tr>
+        </table></td>
+        <td width="248" align="center" valign="top" class="right_part_line"><table width="222" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="46" align="left" valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="30" align="left" valign="top"><p align="left" class="right_box_heading">Online Services</p></td>
+          </tr>
+          <tr>
+            <td>
+            <p class="right_part"><ul>
+  <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/ASPX/DownloadForms/SURVEYOR%20TIME%20TABLE%20FOR%20OCTOBER%5B1%5D.pdf">Time Table</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand%20Book-2011/TABLE%20OF%20FEES.pdf" target="_blank">Fee Structure</a></li>
+<li><a href="study_material.html">Study Material</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=160">Question Paper</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand Book-2011/List of Examination Centers, Employer &amp; Qualification code list.pdf" target="_blank">Exam Center</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=237"target="_blank">Online Exams</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=219"target="_blank">e-Learning Program</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Results/ASPX/IIIResultSrch.aspx" target="_blank">Results</a></li>
+            </ul>
+            </p>            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top">
+            <p>&nbsp;</p>
+            <p align="center" class=" h_lin">------------------------</p>
+            <p>&nbsp;</p>            </td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="22%" height="30" align="center" valign="middle"><img src="images/icon_1.jpg" width="29" height="25" /></td>
+                <td width="78%" height="30" align="left" valign="middle"><p align="left" class="right_part_heading"><strong>Testimonials</strong></p></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+            <p>&nbsp;</p>
+            <p align="left" class="tetimonial_contant">have not the real experience of server administration and unutalely have to contact other sources in order  </p>
+          <p align="left" class="tetimonial_contant"> maintain their client websites when problem arises. We know because we manage other servers as well. Test us</p>            
+          <p align="right">More >></p>          </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+        <td width="16">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>
+  
+</table></td>
+  </tr>
+  <tr>
+    <td height="150" align="center" valign="middle" class="footer_line">
+    <p>&nbsp;</p>
+    <p class="arial_11" align="center"><a href="index.html">Home</a>&nbsp; | &nbsp;<a href="exmanition.html">Exmanition</a>&nbsp; | &nbsp;<a href="handbook.html">Hand Book</a>&nbsp; | &nbsp;<a href="circulars.html">Circulars</a>&nbsp; | &nbsp;<a href="http://www.tvmins.com/INSTI_files/timetablemay2011.pdf" target="_blank">Time Table</a>&nbsp; | &nbsp;<a href="study_material.html">Study Materia</a>&nbsp; | &nbsp;<a href="ourteam.html">Our Team</a>&nbsp; | &nbsp;<a href="associate_insutitute.html">Associate Insutitute</a>&nbsp; | &nbsp; <a href="awards.html">Awards</a>  &nbsp;| &nbsp; <a href="photo_gallery.html">Photo Gallery</a> &nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p align="center"  class="arial_12b" >Copyright © 2011 Rajkot Insurance Institute.  All Rights Reserved.</p>
+    </td>
+  </tr>
+</table>
+
+
+</center>
+</body>
+</html>

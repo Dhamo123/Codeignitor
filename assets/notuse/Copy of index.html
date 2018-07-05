@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to Rajkot Insurance Institute</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</script>
+<style type="text/css">
+<!--
+.leadsCycle_2{width: 190px;}
+.leadsCycle_2 h2{font:bold 12px tahoma;color:#33322D;}
+.leadsCycle_2 h2 a.more{float:right;font:lighter 0.9em tahoma;}
+ul.leadsCycleContainer_2 {width:190px;height:150px!important;height:150px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; list-style-type:none; overflow: hidden;border:none!important;}
+ul.leadsCycleContainer_2 li{padding:0px;}
+ul.leadsCycleContainer_2 li.leadsCycleBg{ list-style-type:none;}
+.leadsCycleDate_2{float:right;font-size:9px;color:#655f5f; list-style-type:none;}
+.leadsCycleContainer_2 img {vertical-align:middle;margin:0px 0px;}
+ul.leadsCycleContainer_2 {font-size:13px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; list-style-type:none; }
+
+.leadsCycleBg_2 p{font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal; line-height:16px;
+	color: #333333; padding:2px 0px 8px 6px; margin:0px;
+	text-decoration: none;}
+	
+	
+.leadsCycleBg_2 p a{
+	color: #333333;
+	text-decoration: none;}	
+	
+	
+-->
+
+</style>
+<script src="AC_RunActiveContent.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" href="pro_dropdown_2/pro_dropdown_2.css" />
+
+<script src="pro_dropdown_2/stuHover.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+      
+	  
+/***********************************************
+* Ultimate Fade-In Slideshow (v1.51): © Dynamic Drive (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+ 
+var fadeimages=new Array()
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages[0]=["header_img/header_0.jpg", "", ""] //plain image syntax
+fadeimages[1]=["header_img/header_1.jpg", "", ""] //image with link syntax
+fadeimages[2]=["header_img/header_2.jpg", "", ""] //image with link and target syntax
+fadeimages[3]=["header_img/header_2.jpg", "", ""] //image with link and target syntax
+fadeimages[4]=["header_img/header_3.jpg", "", ""] //image with link and target syntax
+fadeimages[5]=["header_img/header_3.jpg", "", ""] //image with link and target syntax
+fadeimages[6]=["header_img/header_4.jpg", "", ""] //image with link syntax
+fadeimages[7]=["header_img/header_4.jpg", "", ""] //image with link and target syntax
+fadeimages[8]=["header_img/header_5.jpg", "", ""] //image with link and target syntax
+fadeimages[9]=["header_img/header_5.jpg", "", ""] //image with link and target syntax
+fadeimages[10]=["header_img/header_0.jpg", "", ""] //image with link and target syntax
+var fadeimages2=new Array() //2nd array set example. Remove or add more sets as needed.
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages2[0]=["photo1.jpg", "", ""] //plain image syntax
+fadeimages2[1]=["photo2.jpg", "http://www.cssdrive.com", ""] //image with link syntax
+fadeimages2[2]=["photo3.jpg", "http://www.javascriptkit.com", "_new"] //image with link and target syntax
+ 
+var fadebgcolor="white"
+
+////NO need to edit beyond here/////////////
+ 
+var fadearray=new Array() //array to cache fadeshow instances
+var fadeclear=new Array() //array to cache corresponding clearinterval pointers
+ 
+var dom=(document.getElementById) //modern dom browsers
+var iebrowser=document.all
+ 
+function fadeshow(theimages, fadewidth, fadeheight, borderwidth, delay, pause, displayorder){
+this.pausecheck=pause
+this.mouseovercheck=0
+this.delay=delay
+this.degree=10 //initial opacity degree (10%)
+this.curimageindex=0
+this.nextimageindex=1
+fadearray[fadearray.length]=this
+this.slideshowid=fadearray.length-1
+this.canvasbase="canvas"+this.slideshowid
+this.curcanvas=this.canvasbase+"_0"
+if (typeof displayorder!="undefined")
+theimages.sort(function() {return 0.5 - Math.random();}) //thanks to Mike (aka Mwinter) :)
+this.theimages=theimages
+this.imageborder=parseInt(borderwidth)
+this.postimages=new Array() //preload images
+for (p=0;p<theimages.length;p++){
+this.postimages[p]=new Image()
+this.postimages[p].src=theimages[p][0]
+}
+ 
+var fadewidth=fadewidth+this.imageborder*2
+var fadeheight=fadeheight+this.imageborder*2
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers (ie: Firefox)
+document.write('<div id="master'+this.slideshowid+'" style="position:relative;width:'+fadewidth+'px;height:'+fadeheight+'px;overflow:hidden;"><div id="'+this.canvasbase+'_0" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div><div id="'+this.canvasbase+'_1" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div></div>')
+else
+document.write('<div><img name="defaultslide'+this.slideshowid+'" src="'+this.postimages[0].src+'"></div>')
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers such as Firefox
+this.startit()
+else{
+this.curimageindex++
+setInterval("fadearray["+this.slideshowid+"].rotateimage()", this.delay)
+}
+}
+
+function fadepic(obj){
+if (obj.degree<100){
+obj.degree+=10
+if (obj.tempobj.filters&&obj.tempobj.filters[0]){
+if (typeof obj.tempobj.filters[0].opacity=="number") //if IE6+
+obj.tempobj.filters[0].opacity=obj.degree
+else //else if IE5.5-
+obj.tempobj.style.filter="alpha(opacity="+obj.degree+")"
+}
+else if (obj.tempobj.style.MozOpacity)
+obj.tempobj.style.MozOpacity=obj.degree/101
+else if (obj.tempobj.style.KhtmlOpacity)
+obj.tempobj.style.KhtmlOpacity=obj.degree/100
+else if (obj.tempobj.style.opacity&&!obj.tempobj.filters)
+obj.tempobj.style.opacity=obj.degree/101
+}
+
+else{
+clearInterval(fadeclear[obj.slideshowid])
+obj.nextcanvas=(obj.curcanvas==obj.canvasbase+"_0")? obj.canvasbase+"_0" : obj.canvasbase+"_1"
+obj.tempobj=iebrowser? iebrowser[obj.nextcanvas] : document.getElementById(obj.nextcanvas)
+obj.populateslide(obj.tempobj, obj.nextimageindex)
+obj.nextimageindex=(obj.nextimageindex<obj.postimages.length-1)? obj.nextimageindex+1 : 0
+setTimeout("fadearray["+obj.slideshowid+"].rotateimage()", obj.delay)
+}
+}
+ 
+fadeshow.prototype.populateslide=function(picobj, picindex){
+var slideHTML=""
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML='<a href="'+this.theimages[picindex][1]+'" target="'+this.theimages[picindex][2]+'">'
+slideHTML+='<img src="'+this.postimages[picindex].src+'" border="'+this.imageborder+'px">'
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML+='</a>'
+picobj.innerHTML=slideHTML
+}
+ 
+ 
+fadeshow.prototype.rotateimage=function(){
+if (this.pausecheck==1) //if pause onMouseover enabled, cache object
+var cacheobj=this
+if (this.mouseovercheck==1)
+setTimeout(function(){cacheobj.rotateimage()}, 100)
+else if (iebrowser&&dom||dom){
+this.resetit()
+var crossobj=this.tempobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+crossobj.style.zIndex++
+fadeclear[this.slideshowid]=setInterval("fadepic(fadearray["+this.slideshowid+"])",50)
+this.curcanvas=(this.curcanvas==this.canvasbase+"_0")? this.canvasbase+"_1" : this.canvasbase+"_0"
+}
+else{
+var ns4imgobj=document.images['defaultslide'+this.slideshowid]
+ns4imgobj.src=this.postimages[this.curimageindex].src
+}
+this.curimageindex=(this.curimageindex<this.postimages.length-1)? this.curimageindex+1 : 0
+}
+ 
+fadeshow.prototype.resetit=function(){
+this.degree=10
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+if (crossobj.filters&&crossobj.filters[0]){
+if (typeof crossobj.filters[0].opacity=="number") //if IE6+
+crossobj.filters(0).opacity=this.degree
+else //else if IE5.5-
+crossobj.style.filter="alpha(opacity="+this.degree+")"
+}
+else if (crossobj.style.MozOpacity)
+crossobj.style.MozOpacity=this.degree/101
+else if (crossobj.style.KhtmlOpacity)
+crossobj.style.KhtmlOpacity=this.degree/100
+else if (crossobj.style.opacity&&!crossobj.filters)
+crossobj.style.opacity=this.degree/101
+}
+ 
+ 
+fadeshow.prototype.startit=function(){
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+this.populateslide(crossobj, this.curimageindex)
+if (this.pausecheck==1){ //IF SLIDESHOW SHOULD PAUSE ONMOUSEOVER
+var cacheobj=this
+var crossobjcontainer=iebrowser? iebrowser["master"+this.slideshowid] : document.getElementById("master"+this.slideshowid)
+crossobjcontainer.onmouseover=function(){cacheobj.mouseovercheck=1}
+crossobjcontainer.onmouseout=function(){cacheobj.mouseovercheck=0}
+}
+this.rotateimage()
+}
+
+function lightup(imageobject, opacity){
+ if (navigator.appName.indexOf("Netscape")!=-1
+  &&parseInt(navigator.appVersion)>=5)
+    imageobject.style.MozOpacity=opacity/100
+ else if (navigator.appName.indexOf("Microsoft")!= -1 
+  &&parseInt(navigator.appVersion)>=4)
+    imageobject.filters.alpha.opacity=opacity
+}
+
+
+</script>
+</head>
+
+
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+
+
+
+
+
+</head>
+
+<body onload="MM_preloadImages('images/menu/home_h.jpg','images/menu/exmanition._hjpg.jpg','images/menu/insurance_carriers_h.jpg','images/menu/circulars_h.jpg','images/menu/awards_h.jpg','images/menu/journals_h.jpg','images/menu/our_team_h.jpg','images/menu/associate_insutitute_h.jpg')">
+<center>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top"><table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center" valign="top"><table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="13%" height="159" align="center" valign="middle"><p align="center"><img src="images/logo_1.jpg" alt="Logo" /></p></td>
+        <td width="87%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="44" align="right" valign="top"><table width="320" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="24" align="left" valign="top" class="top_menu_line"><img src="images/curve_left_top.jpg" width="24" height="42" /></td>
+                <td width="270" align="center" valign="middle" class="top_menu_line"><p align="center" class="arial_11"><a href="reports.html">Reports</a>  &nbsp; | &nbsp; <a href="photo_gallery.html">Photo Gallery</a>  &nbsp; | &nbsp; <a href="contactus.html">Contact Us </a>  &nbsp; | &nbsp; <a href="sitemap.html">Sitemap</a></p></td>
+                <td width="24" align="right" valign="top" class="top_menu_line"><img src="images/curve_right_top.jpg" width="24" height="42" /></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="76" align="left" valign="top"><p align="left" style="padding-top:5px;" class="georgia_30"><strong>Rajkot Insurance Institute</strong></p></td>
+          </tr>
+          <tr>
+            <td height="39" align="left" valign="top"><table width="826" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="82" align="left" valign="top"><a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','images/menu/home_h.jpg',1)"><img src="images/menu/home_h.jpg" name="Image7" width="82" height="39" border="0" id="Image7" /></a></td>
+                <td width="2" align="center" valign="top"></td>
+                <td width="97" align="left" valign="top">
+                
+                <a href="exmanition.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','images/menu/exmanition._hjpg.jpg',1)"><img src="images/menu/exmanition.jpg" name="Image8" width="97" height="39" border="0" id="Image8" /></a>
+                <ul class="sub">
+			<li><a href="#nogo3">Vision</a></li>
+			<li><a href="#">Mission</a></li></ul>
+        </li>
+                
+                </td>
+                <td width="2" align="center" valign="top"></td>
+                <td width="139" align="left" valign="top"><a href="insurance_carriers.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','images/menu/insurance_carriers_h.jpg',1)"><img src="images/menu/insurance_carriers.jpg" name="Image9" width="139" height="39" border="0" id="Image9" /></a></td>
+                <td width="2" align="center" valign="top"></td>
+                <td width="91" align="left" valign="top"><a href="circulars.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','images/menu/circulars_h.jpg',1)"><img src="images/menu/circulars.jpg" name="Image10" width="91" height="39" border="0" id="Image10" /></a></td>
+                <td width="2" align="center" valign="top"></td>
+                <td width="82" align="left" valign="top"><a href="awards.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','images/menu/awards_h.jpg',1)"><img src="images/menu/awards.jpg" name="Image11" width="82" height="39" border="0" id="Image11" /></a></td>
+                <td width="2" align="right" valign="top">&nbsp;</td>
+                <td width="86" align="left" valign="top"><a href="study_material.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image12','','images/menu/journals_h.jpg',1)"><img src="images/menu/journals.jpg" name="Image12" width="86" height="39" border="0" id="Image12" /></a></td>
+                <td width="2" align="center" valign="top"></td>
+                <td width="90" align="left" valign="top"><a href="ourteam.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image13','','images/menu/our_team_h.jpg',1)"><img src="images/menu/our_team.jpg" name="Image13" width="90" height="39" border="0" id="Image13" /></a></td>
+                <td width="2" align="center" valign="top"></td>
+                <td width="145" align="left" valign="top"><a href="associate_insutitute.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image14','','images/menu/associate_insutitute_h.jpg',1)"><img src="images/menu/associate_insutitute.jpg" name="Image14" width="145" height="39" border="0" id="Image14" /></a></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" style="padding-top:4px;"><table width="972" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="16" align="left" valign="top"><img src="images/heade_left_curve_1.jpg" width="16" height="213" /></td>
+        <td width="940" align="center" valign="top"><script type="text/javascript">
+//new fadeshow(IMAGES_ARRAY_NAME, slideshow_width, slideshow_height, borderwidth, delay, pause (0=no, 1=yes), optionalRandomOrder)
+new fadeshow(fadeimages, 940, 213, 0, 1400, 0)</script></td>
+        <td width="16" align="right" valign="top"><img src="images/heade_right_curve_1.jpg" width="16" height="213" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="center" valign="top">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><table width="972" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="708" align="left" valign="top"><table width="690" border="0" align="left" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="18" align="left" valign="top"><img src="images/left_gradion_1.jpg" width="18" height="176" /></td>
+            <td width="650" align="center" valign="top" class="main_contant_line_1"><table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="400" align="left" valign="top" class="main_contant_line"><table width="614" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td height="20" align="center" valign="top">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td height="46" align="left" valign="middle"><p align="left" class="welcome_24"><strong>Welcome To Rajkot Insurance Institute</strong></p></td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top"><p align="justify" class="welcome_contant">Esatblished in 2001,Rajkot Insurance Institue has always endeavoured to cater to various needs of Technical Examination Aspirants of both LIC & GIC. We provide all support,guidance & help to candiadtes like providing memebership and exam forms,study-material,exam time tables,arrangement of exams etc.</p>
+                        
+                       
+                        <p align="justify" class="welcome_contant">As a step forward in the service to our members/candidates,we have launched this web-site to provide all-under-one-roof!! Here,you would find question-papers & forms to download,exam time tables,results and all on-going activities of Bhavnagar Insurance Institue.</p>
+                        <p>&nbsp;</p>
+                         <p align="right" class="welcome_contant"><a href="#"><strong>Read more...</strong></a></p>                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="33%" align="left" valign="top"><table width="200" border="0" align="left" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td align="center" valign="top"><img src="images/gray_box_top_curve.jpg" width="200" height="15" /></td>
+                              </tr>
+                              <tr>
+                                <td height="190" align="center" valign="top" class="box_center_line"><table width="184" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td height="36" colspan="2" align="left" valign="top"><p align="left" style="padding-left:2px;" class="box_heading"><strong>OUR PLAN </strong></p></td>
+                                    </tr>
+                                  <tr>
+                                    <td width="15" height="22" align="left" valign="middle"><img src="images/airrow_1.png" /></td>
+                                    <td width="165" height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/airrow_1.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/airrow_1.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/airrow_1.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/airrow_1.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  
+                                  
+                                </table></td>
+                              </tr>
+                              <tr>
+                                <td align="center" valign="top"><img src="images/gray_box_bot_curve.jpg" width="200" height="15" /></td>
+                              </tr>
+                            </table></td>
+                            <td width="34%" align="center" valign="top"><table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td align="center" valign="top"><img src="images/gray_box_top_curve.jpg" width="200" height="15" /></td>
+                              </tr>
+                              <tr>
+                                <td height="190" align="center" valign="top" class="box_center_line"><table width="184" border="0" align="center" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                    <td height="36" colspan="2" align="left" valign="top"><p align="left" class="box_heading" style="padding-left:2px;"><strong>ADMISSION</strong></p></td>
+                                    </tr>
+                                  <tr>
+                                    <td width="15" height="22" align="left" valign="middle"><img src="images/gray_point.png" /></td>
+                                    <td width="165" height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/gray_point.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/gray_point.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/gray_point.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="22" align="left" valign="middle"><img src="images/gray_point.png" /></td>
+                                    <td height="24" align="left" valign="middle"><p align="left" class="box_contant">Information for Candidates appear </p></td>
+                                  </tr>
+                                  
+                                  
+                                </table></td>
+                              </tr>
+                              <tr>
+                                <td align="center" valign="top"><img src="images/gray_box_bot_curve.jpg" width="200" height="15" /></td>
+                              </tr>
+                            </table></td>
+                            <td width="33%" align="right" valign="top"><table width="200" border="0" align="right" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td align="center" valign="top"><img src="images/gray_box_top_curve.jpg" width="200" height="15" /></td>
+                              </tr>
+                              <tr>
+                                <td height="180" align="center" valign="top" class="box_center_line"><table width="190" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td height="32" align="left" valign="top"><p align="left" style="padding-left:6px;" class="box_heading"><strong>LATEST NEWS</strong></p></td>
+                                    </tr>
+                                  <tr>
+                                    <td align="center" valign="middle" style="padding-left:0px;">
+   <div style="width:190px; padding-bottom:0px; height:160px;">
+         <ul id="leadsCycleList_2" class="leadsCycleContainer_2">
+           <li class="leadsCycleBg_2">
+             <p align="left"> 1. <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=240" target="_blank" title="">Specialised Diploma-Extensio
+of <br /> &nbsp; &nbsp; &nbsp;Last dates</a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left">2. <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=238" target="_blank" title="">To book the exam slot for <br />
+&nbsp; &nbsp; &nbsp;licentiate online exam &nbsp; <img src="images/new1.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 3. <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=239" target="_blank" title="">CIE Workshop <img src="images/new1.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 4. <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=214" target="_blank" title="">Program calendar for year 2011-12 <br />&nbsp; &nbsp; &nbsp;
+               College of Insurance &nbsp; <img src="images/0.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 5. <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=237" target="_blank" title="">"Online Exam Centres for <br /> &nbsp; &nbsp;&nbsp;
+LICENTIATE" <img src="images/0_002.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 6.&nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=236" target="_blank" title="">25 hrs Renewal Programme 
+               &nbsp;  for Broker &nbsp; <img src="images/new1.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 7. &nbsp; <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=235" target="_blank" title="">Brokers Training Programme
+               &nbsp; &nbsp;(100/50 hrs) &nbsp; <img src="images/0_002.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 8. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=232" target="_blank" title="">Connect us at Facebook- &nbsp; <img src="images/0_002.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 9. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=160" target="_blank" title="">Question papers &nbsp; <img src="images/new1.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left">10. &nbsp; <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=219" target="_blank" title="">Introduction of e-Learning Program &nbsp; <img src="images/0.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 11. &nbsp; <a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=166" target="_blank" title="">Model Question Paper of 
+               &nbsp;  &nbsp; Licentiate Exam  &nbsp; <img src="images/new1.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 12. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=212" target="_blank" title="">Pre-recruitment Test (Offline)- &nbsp; <img src="images/0.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 13. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=206" target="_blank" title="">Information for Candidates appearing for <br />
+               &nbsp; &nbsp;Associateship exams - May 2011</a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 14.&nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=195" target="_blank" title="">May 2011-Important Information &nbsp; <img src="images/new1.gif" /></a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 15. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=192" target="_blank" title="">ASSOCIATE &amp; FELLOWSHIP MAY-11 EXAM <br />
+               &nbsp; &nbsp;- REVISION OF SYLLABUS &amp; COURSE CURRICULUM</a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 16. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=189" target="_blank" title="">Revision of prize scheme</a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left"> 17. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=156" target="_blank" title="">VISITING FACULTY FOR INSURANCE INSTITUTE <br />
+               &nbsp; &nbsp;OF INDIA (COLLEGE OF INSURANCE)</a></p>
+           </li>
+           <li class="leadsCycleBg_2">
+             <p align="left">18. &nbsp;<a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=108" target="_blank" title="">Exemption in Licentiate,Associateship,
+               &nbsp; Fellowship  to ACA , DIRM qualification</a></p>
+           </li>
+         </ul>
+         <script type="text/javascript" src="scrolling.js"></script>
+<script type="text/javascript">
+	var handle = AE.widget.SimpleScroll.decorate('leadsCycleList_2', {lineHeight:90, startDelay: 0.12});
+</script>
+</div></td>
+                                  </tr>
+                                  
+                                </table></td>
+                              </tr>
+                              <tr>
+                                <td align="center" valign="top"><img src="images/gray_box_bot_curve.jpg" width="200" height="15" /></td>
+                              </tr>
+                            </table></td>
+                          </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top">&nbsp;</td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+            <td width="22" align="right" valign="top"><img src="images/right_gradion_1.jpg" width="22" height="176" /></td>
+          </tr>
+        </table></td>
+        <td width="248" align="center" valign="top" class="right_part_line"><table width="222" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="46" align="left" valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="30" align="left" valign="top"><p align="left" class="right_box_heading">Online Services</p></td>
+          </tr>
+          <tr>
+            <td>
+            <div class="right_part"><ul>
+  <li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/ASPX/DownloadForms/SURVEYOR%20TIME%20TABLE%20FOR%20OCTOBER%5B1%5D.pdf">Time Table</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand%20Book-2011/TABLE%20OF%20FEES.pdf" target="_blank">Fee Structure</a></li>
+<li><a href="study_material.html">Study Material</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=160">Question Paper</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/ProfessionalExam/Downloads/Hand Book-2011/List of Examination Centers, Employer &amp; Qualification code list.pdf" target="_blank">Exam Center</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=237"target="_blank">Online Exams</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Home/ASPX/IIINewsDetail.aspx?QID=219"target="_blank">e-Learning Program</a></li>
+<li><a href="http://www.insuranceinstituteofindia.com/InsuranceInst/Results/ASPX/IIIResultSrch.aspx" target="_blank">Results</a></li>
+            </ul>
+            </div>            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top">
+            <p>&nbsp;</p>
+            <p align="center" class=" h_lin">------------------------</p>
+            <p>&nbsp;</p>            </td>
+          </tr>
+          <tr>
+            <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="22%" height="30" align="center" valign="middle"><img src="images/icon_1.jpg" width="29" height="25" /></td>
+                <td width="78%" height="30" align="left" valign="middle"><p align="left" class="right_part_heading"><strong>Testimonials</strong></p></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+            <p>&nbsp;</p>
+            <p align="left" class="tetimonial_contant">have not the real experience of server administration and unutalely have to contact other sources in order  </p>
+          <p align="left" class="tetimonial_contant"> maintain their client websites when problem arises. We know because we manage other servers as well. Test us</p>            
+          <p align="right">More >></p>          </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+        <td width="16">&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">&nbsp;</td>
+  </tr>
+  
+</table></td>
+  </tr>
+  <tr>
+    <td height="150" align="center" valign="middle" class="footer_line">
+    <p>&nbsp;</p>
+    <p class="arial_11" align="center"><a href="index.html">Home</a>&nbsp; | &nbsp;<a href="exmanition.html">Exmanition</a>&nbsp; | &nbsp;<a href="handbook.html">Hand Book</a>&nbsp; | &nbsp;<a href="circulars.html">Circulars</a>&nbsp; | &nbsp;<a href="http://www.tvmins.com/INSTI_files/timetablemay2011.pdf" target="_blank">Time Table</a>&nbsp; | &nbsp;<a href="study_material.html">Study Materia</a>&nbsp; | &nbsp;<a href="ourteam.html">Our Team</a>&nbsp; | &nbsp;<a href="associate_insutitute.html">Associate Insutitute</a>&nbsp; | &nbsp; <a href="awards.html">Awards</a>  &nbsp;| &nbsp; <a href="photo_gallery.html">Photo Gallery</a> &nbsp; | &nbsp;<a href="contactus.html">Contact Us</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p align="center"  class="arial_12b" >Copyright © 2011 Rajkot Insurance Institute.  All Rights Reserved.</p>
+    </td>
+  </tr>
+</table>
+
+
+</center>
+</body>
+</html>
